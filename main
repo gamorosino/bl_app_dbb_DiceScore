@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#PBS -l nodes=1:ppn=1
+#PBS -l walltime=00:15:00
+
+
+#parse config.json for input parameters 
+
+computed=$(jq -r .computed config.json)
+groud_truth=$(jq -r .groud_truth config.json)
+
+
+if  ! ( [ -z "${computed}" ]  || [  "${computed}" == "null" ] || [ -z "${groud_truth}" ]  || [  "${groud_truth}" == "null" ]   ); then
+
+	echo "computed: "${computed}
+	echo "groud_truth: "${groud_truth}
+
+
+	outputdir=${PWD}"/dice_score"
+	mkdir -p ${outputdir}
+	output=${outputdir}'/dice_score.txt'
+	
+	singularity exec -e  --nv docker://gamorosino/bl_app_dbb_disseg python   dice_score.py  ${computed} ${groud_truth} ${output}	
+
+	
+
+
+fi
