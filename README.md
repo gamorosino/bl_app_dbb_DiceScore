@@ -99,17 +99,3 @@ It is suggested to install python modules using conda.
 conda  conda install -c conda-forge nibabel=2.5.1 \
       && conda install numpy
 ```
-
-## Run test on DBB Distorted Brain testset
-
-You can run the tool to reproduce the results on the test set of DBB Distorted Brain Benchmark using the script with dockers:
-```
-run_test.sh <outputdir>
-```
-or with local softwares installed:
-
-```
-run_test_local.sh <outputdir>
-```
-The script performs the download of the published dataset of the DBB benchmark (https://doi.org/10.25663/brainlife.pub.24) and predicts the segmentation volume for each subject. 
-Furthermore, compute the dice score using the published ground-truth and create the final _csv_ file, _average_dice_score.csv_, reporting the dice score for each label of the segmented volumes.
