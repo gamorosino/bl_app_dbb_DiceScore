@@ -6,6 +6,18 @@ This application computes the Dice similarity coefficient (DSC) between two segm
 
     Gabriele Amorosino (gamorosino@fbk.eu)
 
+    
+### Citation
+
+If you use this code for your research please cite:
+
+```
+Gabriele Amorosino, Denis Peruzzo, Daniela Redaelli, Emanuele Olivetti, Filippo Arrigoni, Paolo Avesani,
+DBB - A Distorted Brain Benchmark for Automatic Tissue Segmentation in Paediatric Patients,
+NeuroImage, 2022, 119486, ISSN 1053-8119, https://doi.org/10.1016/j.neuroimage.2022.119486.
+```
+
+
 ## Running the Brainlife App
 
 
